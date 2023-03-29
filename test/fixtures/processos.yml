@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  autor: MyString
+  data: 2023-03-29
+  versao: 1
+
+two:
+  nome: MyString
+  autor: MyString
+  data: 2023-03-29
+  versao: 1

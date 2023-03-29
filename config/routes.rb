@@ -72,4 +72,11 @@ Rails.application.routes.draw do
   post "/main_screen/:id/salvar_controle", to: "main_screen#salvar_controle"
   get "/main_screen/:id/excluir_controle", to: "main_screen#excluir_controle"
 
+  #processos
+ 
+  post "/main_screen/incluir_processo", to: "main_screen#incluir_processo"
+  post "/main_screen/alterar_processo", to: "main_screen#alterar_processo"
+  post "/main_screen/:id/salvar_processo", to: "main_screen#salvar_processo"
+  get "/main_screen/:id/excluir_processo", to: "main_screen#excluir_processo"
+
 end

@@ -10,6 +10,7 @@ class MainScreenController < ApplicationController
     @clientes = Cliente.all
     @performances = Performance.all
     @controles = Controle.all
+    @processos = Processo.all
 
   end
 
@@ -311,5 +312,44 @@ class MainScreenController < ApplicationController
     controle = Controle.new
     controle.descricao = params[:descricao]
     controle.save
+  end
+
+  #processos
+ 
+  def incluir_processo
+    processo = Processo.new
+    processo.nome = params[:nome]
+    processo.autor = params[:autor]
+    processo.data = params[:data]
+    processo.versao = params[:versao]
+    processo.save
+    
+    redirect_to "/main_screen"
+  end
+
+  def salvar_processo
+    processo = Processo.find(params[:id])
+    processo.nome = params[:nome]
+    processo.autor = params[:autor]
+    processo.data = params[:data]
+    processo.versao = params[:versao]
+    processo.save
+
+    redirect_to "/main_screen"
+  end
+
+  def excluir_processo
+    processo = Processo.find(params[:id])
+    processo.destroy
+    redirect_to "/main_screen"
+  end
+
+  def alterar_processo
+    processo = Processo.new
+    processo.nome = params[:nome]
+    processo.autor = params[:autor]
+    processo.data = params[:data]
+    processo.versao = params[:versao]
+    processo.save
   end
 end

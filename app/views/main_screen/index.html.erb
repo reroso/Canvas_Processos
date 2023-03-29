@@ -447,7 +447,7 @@ width: 100%;
 </style>
 </head>
 <body>
-
+                                  
 <div class="flex-container">
     <div class="div_cabecalho">  
         <div class="cabecalho_1">PROCESS MAP MODEL CANVAS</div>
@@ -457,7 +457,8 @@ width: 100%;
                     <label>Nome do Processo:</label>
                 </div>
                 <div class="white_div_2_2">
-                    <input type="text" id="input_nome_cabecalho_2" name="name">
+                    <form action="/main_screen/incluir_processo" method="post" class="formulario">
+                        <input type="text" id="input_nome_cabecalho_2" name="nome">
                 </div>
             </div>    
         </div>
@@ -467,7 +468,7 @@ width: 100%;
                     <label>Elaborado por:</label>
                 </div>
                 <div class="white_div_3_2">
-                    <input type="text" id="input_nome_cabecalho_3" name="name">
+                    <input type="text" id="input_nome_cabecalho_3" name="autor">
                 </div>
             </div>  
         </div>
@@ -478,7 +479,7 @@ width: 100%;
                         <label>Em:</label>
                     </div>
                     <div class="white_div_4_2">
-                        <input type="date" id="input_data_cabecalho_4" name="name">
+                        <input type="date" id="input_data_cabecalho_4" name="data">
                     </div>
                     </div>  
             </div>
@@ -488,7 +489,8 @@ width: 100%;
                         <label>Versão:</label>
                     </div>
                     <div class="white_div_5_2">
-                        <input type="text" id="input_nome_cabecalho_5" name="name">
+                        <input type="text" id="input_nome_cabecalho_5" name="versao">
+                    </form>
                     </div>
                 </div>  
             </div>
@@ -1074,6 +1076,7 @@ width: 100%;
         for (var i = 0; i< formulario.length; i++){
           formulario[i].addEventListener('keydown', e => {
                 if(e.key == "Enter") {
+                    console.log(e);
                     e.target.parentElement.parentElement.submit();
                 }
             })
